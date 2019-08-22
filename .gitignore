@@ -35,8 +35,9 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
+.idea
 .idea/
-.vuepress/
+dist/
 
 # TypeScript v1 declaration files
 typings/
