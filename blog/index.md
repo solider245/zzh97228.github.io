@@ -1,6 +1,7 @@
 ---
 home: true
-actionText: Get Started →
+heroImage: /lagabu.jpg
+actionText: 来看看面经吧 →
 actionLink: /guide/
 features:
 - title: 面试经历和个人琐事
