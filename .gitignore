@@ -36,7 +36,7 @@ build/Release
 node_modules/
 jspm_packages/
 .idea/
-
+.vuepress/
 
 # TypeScript v1 declaration files
 typings/

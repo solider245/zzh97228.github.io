@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "vuepress dev blog",
-    "build": "vuepress build blog && cp ./post/index.html ./",
+    "build": "vuepress build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
