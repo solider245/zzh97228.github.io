@@ -2,8 +2,8 @@ const basePath = 'post'
 
 module.exports = {
     // meta
-    title: '我的博客',
-    description: '万事皆虚，万事皆允',
+    title: 'kabama',
+    description: 'kabama_house',
     // vuepress config
     dest: basePath,
     base: `/${basePath}/`,
