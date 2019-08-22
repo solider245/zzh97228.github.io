@@ -5,8 +5,8 @@ module.exports = {
     title: 'lagabu的个人笔记',
     description: '"lagabu"是"癞蛤蟆"的方言读法，用烟熏制并配以蘸料就做成了"熏拉丝"。肉质细腻、口味丰富，不仅鲜美还能延年益寿。(+1s)',
     // vuepress config
-    // dest: basePath,
-    // base: `${basePath}/`,
+    dest: basePath,
+    base: `/${basePath}/`,
     serviceWorker: true,
     evergreen: true,
     ga: 'UA-112738831-1',
