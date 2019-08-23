@@ -3,6 +3,14 @@
 
 ## 排序算法
 
+| 排序方法     | 平均时间复杂度           | 最好情况  |    最坏情况   |
+| ------------|:-------------:| -----:| -----: |
+| 冒泡排序     | O(n2) | O(n) |  O(n2)  |
+| 快速排序     | O(nlog2n)      |   O(nlog2n) |  O(n2)  |
+| 选择排序     | O(n2)     |    O(n2)  |  O(n2)     |
+| 插入排序     | O(n2)     |    O(n)  |  O(n2)     |
+
+
 ### 冒泡排序
 ```javascript
 function bubbleSort(arr) {
@@ -29,6 +37,42 @@ function quickSort(arr) {
     }
     return quickSort(left).concat(arr[0],quickSort(right))
   
+}
+```
+
+### 选择排序
+
+```javascript
+
+function selectionSort(arr) {
+  for (let i=0;i<arr.length;i++) {
+      let min = arr[i]
+      let idx = 1
+      for (let j=0;ij<arr.length;j++) {
+          if (arr[j]<min) {
+              [min,arr[j]] = [arr[j],min]
+          }
+      }
+      [arr[i],arr[idx]] = [min,arr[i]]
+  }
+}
+
+```
+
+### 插入排序
+
+```javascript
+function insertSort(arr) {
+  for (let i=0;i<arr.length;i++) {
+      let key = arr[i]
+      let j = i-1
+      while (j>=0 && arr[j] > key) {
+          arr[j+1] = arr[j]
+          j--
+      } 
+      arr[j+1] = key
+  }
+  return arr
 }
 ```
 
