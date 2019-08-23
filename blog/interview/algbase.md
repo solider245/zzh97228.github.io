@@ -191,7 +191,7 @@ function flattern2(arr) {
 * @param arr
 * @returns {number[]}
 */
-function falttern3(arr) {
+function flattern3(arr) {
   return arr.toString().split(',').map(item=>+item)
 }
 
