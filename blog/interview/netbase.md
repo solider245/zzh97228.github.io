@@ -5,11 +5,11 @@
 
 ## OSI七层结构
 
-1.  应用层：文件传输协议(http\smtp\ftp)
+1.  应用层：文件传输协议(http、smtp、ftp)
 2.  表示层
 3.  会话层：建立或者解除会话
-4.  传输层：TCP\UDP
-5.  网络层：IP\ICMP
+4.  传输层：TCP、UDP
+5.  网络层：IP、ICMP
 6.  数据链路层：传输有地址的帧
 7.  物理层
 
@@ -25,16 +25,16 @@
 
 三次握手之所以三次是要保证client和server均让对方知道自己接收和发送的能力没有问题而保证的最小次数。为保证这种能力，每次握手都会携带一个seq标识，接收方接收到后设置ack=seq+1，并置ACK=1
 
-1.  C->S server只能判断client具备发送能力
-2.  S->C client判断出server具有接收和发布能力
-3.  C->S 双方均保证接收和发送能力没问题
+1.  C=>S server只能判断client具备发送能力
+2.  S=>C client判断出server具有接收和发布能力
+3.  C=>S 双方均保证接收和发送能力没问题
 
 
 
 
 ## 跨域的方法
 
-1.  JSONP：动态创建<script>标签并带上请求接口发送跨域请求，只能用get方法
+1.  JSONP：动态创建script标签并带上请求接口发送跨域请求，只能用get方法
 2.  CORS：后端设置Access-allow-origin-control='*'即可
 3.  postMessage
 4.  iframe+document.domain
@@ -119,7 +119,7 @@ http是明文传输未加密通信的，网景公司设置了SSL协议对http协
 3.  经过传输层、网络层、数据链路层、物理层到达服务器
 4.  服务器解析请求并返回响应和html给浏览器
 5.  浏览器根据html构建DOM树，遇到JS脚本和外部JS连接会阻塞并执行脚本
-6.  如遇到<style>标签或者<link>标签(先下载后构建)时根据外部样式、内部样式、内联样式构建CSSOM树并不影响DOM树构建
+6.  如遇到style标签或者link标签(先下载后构建)时根据外部样式、内部样式、内联样式构建CSSOM树并不影响DOM树构建
 7.  DOM树与CSSOM树合并为渲染树
 8.  进行回流(Layout)得到节点的几何信息
 9.  进行重绘(Painting)根据渲染树和回流得到的信息得到节点的绝对像素
