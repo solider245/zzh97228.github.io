@@ -1,6 +1,17 @@
 # HTML/CSS 知识点
 
 
+## BFC块级格式上下文
+
+是CSS盒模型布局的一种渲染模式，元素内部与元素外部互不影响
+
+### 特点：
+
+1.  内部box会在垂直方向上一个接一个放置
+2.  Box在垂直方向上的距离由margin决定
+3.  BFC区域不和float box重叠
+4.  计算BFC高度时浮动元素也参与计算
+
 ## display: none;和visibility: hidden;的区别
 
 联系：都能让元素不可视

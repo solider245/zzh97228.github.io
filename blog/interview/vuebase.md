@@ -20,3 +20,7 @@
 ## vuex中的为什么mutation是同步而action是异步的
 
 因为异步的操作成功和失败不可测，何时进行异步操作也不可测，在异步成功或失败时不commit(mutation)，vuex就无法捕获到异步的结果并进行响应操作。
+
+
+## vue-router
+

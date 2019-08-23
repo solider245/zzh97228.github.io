@@ -1,5 +1,6 @@
 # 算法和数据结构知识点
 
+面试中的算法大多集中在排序、深拷贝、去重这些基础算法层面上，大多用来考察逻辑推理能力和实际的编码能力。
 
 ## 排序算法
 
@@ -10,6 +11,8 @@
 | 选择排序     | O(n2)     |    O(n2)  |  O(n2)     |
 | 插入排序     | O(n2)     |    O(n)  |  O(n2)     |
 
+1.  稳定的排序：选择排序、堆排序、归并排序
+2.  不稳定的排序：冒牌排序、快速排序、插入排序
 
 ### 冒泡排序
 ```javascript
@@ -150,4 +153,47 @@ function countNumber(arr=[]) {
       return prev
   },[]).sort((a,b)=> a.count-b.count) : undefined
 }
+```
+
+### 数组扁平化
+
+```javascript
+/**
+* reduce的方法
+* @param arr
+* @returns {*}
+*/
+function flattern(arr) {
+  return arr.reduce((prev,next)=>{
+      return Array.isArray(next) ? prev.concat(flattern(next)) : prev.concat(next)
+  },[])
+}
+
+/**
+* 原始的方法
+* @param arr
+* @returns {Array}
+*/
+function flattern2(arr) {
+    let res = []
+    for (let i=0 ; i<arr.length;i++) {
+        if (Array.isArray(arr[i])) {
+            res.push(flattern2(arr[i]))
+        }else {
+            res.push(arr[i])
+        }
+    }
+    return res
+}
+
+/**
+* toString()方法
+* @param arr
+* @returns {number[]}
+*/
+function falttern3(arr) {
+  return arr.toString().split(',').map(item=>+item)
+}
+
+
 ```
