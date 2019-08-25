@@ -103,6 +103,56 @@ function jump(n) {
 
 ```
 
+### 青蛙跳台阶并输出所有解
+
+```javascript
+function jump2(n) {
+    if (n === 1) return [[1]]
+    if (n === 2) return [[1,1],[2]]
+    let one = jump2(n-1)
+    let two = jump2(n-2)
+    one = one.map(item=>item.concat(1))
+    two = two.map(item=>item.concat(2))
+    return one.concat(two)
+}
+```
+
+### 青蛙使用最小花费爬楼梯
+```javascript
+/**
+* arr = [10,15,20]
+* return 15
+* @param arr
+* @returns {number}
+*/
+function jumpMin(arr) {
+  if (arr.length === 0) return 0
+  let dp = []
+  dp[0] = arr[0]
+  dp[1] =arr[1]
+  for (let i=2;i<arr.length;i++) {
+      dp[i] = Math.min([dp[i-1],dp[i-2]])+arr[i]
+  }
+  return Math.min([dp[dp.length-1],dp[dp.length-2]])
+}
+```
+
+
+### 青蛙可以跳上一级也可以跳上二级，也可以跳上n级求多少跳法
+
+```javascript
+/**
+* f(n) = f(0)+f(1)+...+f(n-1)
+* f(n-1) = f(0)+f(1)+...+f(n-2)
+* f(n) = 2*f(n-1)
+* @param n
+* @returns {number}
+*/
+function jump3(n) {
+  return n<=1 ? 1 : 2*jump3(n-1)
+}
+```
+
 ### 浅拷贝和深拷贝
 ```javascript
 /**
