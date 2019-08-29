@@ -51,6 +51,62 @@
 - ArrayList和LinkedList区别
 - 为何学习前端、学习前端的方法、遇到问题如何解决
 
+### 作业帮二面
+
+- vue双向数据绑定的原理
+- Object.defineProperty()接收几个参数?分别讲一下
+- 讲一下vue的生命周期的几个阶段
+- 在vue的mounted阶段是真实dom还是vdom
+- 如果有个属性c未在data中申明，却在方法中赋值了如何能实时更新显示c
+- 为什么使用框架代替原先的原生js方法(组件化开发、方便迭代)
+- 框架在技术上有何优势呢？比如考虑回流的效率上(vdom、diff算法)
+- 判断以下代码输出
+```javascript
+var a = 1
+function test() {
+    console.log(a)
+    var a = 2
+    console.log(this.a)
+    this.a = 3
+}
+test() // undefined,1
+new test() // undefined,undefined
+```
+- ```var a={x:1}; var b=a;b.x=2```问a会改变吗？如何使得a不改变？(深拷贝)
+- 写一个深拷贝只考虑基本数据类型和Object
+```javascript
+
+function deepClone(obj) {
+  if (typeof obj !== 'object' || obj === null) {
+      return obj
+  }
+  let newObj = Array.isArray(obj) ? [] : {}
+  for (let key in obj) {
+      if (obj.hasOwnProperty(key)) {
+          let temp = obj[key]
+          if (typeof obj[key] === 'object') {
+              temp = deepClone(obj[key])
+          } 
+          newObj = temp
+      }
+  }
+  return newObj
+  
+}
+```
+
+- 除了递归还有什么简便的方法？(Object.assign({},obj),JSON.parse(JSON.stringfy(obj)))
+- 闭包的理解
+- 写一个计数器(考察闭包)
+```javascript
+var count = (function() {
+  var counter = 0
+  return function() {
+    return (++counter)
+  }
+})()
+```
+
 
 ## 美团
 

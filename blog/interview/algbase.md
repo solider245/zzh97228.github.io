@@ -205,6 +205,19 @@ function countNumber(arr=[]) {
 }
 ```
 
+### 运用闭包实现计数器
+
+```javascript
+
+var count = (function() {
+  var counter = 0
+  return function() {
+    return (++counter)
+  }
+})()
+
+```
+
 ### 数组扁平化
 
 ```javascript
