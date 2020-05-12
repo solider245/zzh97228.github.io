@@ -1,0 +1,25 @@
+{
+  "name": "zzh97228.github.io",
+  "version": "1.0.0",
+  "description": "personal blog",
+  "scripts": {
+    "dev": "npx vitepress",
+    "build": "npx vitepress build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zzh97228/zzh97228.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zzh97228/zzh97228.github.io/issues"
+  },
+  "homepage": "https://github.com/zzh97228/zzh97228.github.io#readme",
+  "devDependencies": {
+    "less": "^3.11.1",
+    "less-loader": "^6.1.0",
+    "prettier": "^2.0.5",
+    "vitepress": "^0.1.1"
+  }
+}
