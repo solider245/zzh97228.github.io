@@ -4,7 +4,7 @@
   "description": "personal blog",
   "scripts": {
     "dev": "npx vitepress",
-    "build": "npx vitepress build"
+    "build": "node ./build.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
     "less": "^3.11.1",
     "less-loader": "^6.1.0",
     "prettier": "^2.0.5",
+    "shelljs": "^0.8.4",
     "vitepress": "^0.1.1"
   }
 }
