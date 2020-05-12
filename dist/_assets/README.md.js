@@ -1,0 +1,1 @@
+import{q as t,p as e,t as r}from"./runtime-core.esm-bundler-7f7e3b66.js";const n='{"title":"","frontmatter":{},"lastUpdated":1589266669867.103}';var a={};const s=r("div",{class:"vitepress-content"},[r("h2",{align:"center"},"Lagabu Blog")],-1);a.render=function(r,n){return e(),t("div",null,[s])};export default a;export{n as __pageData};
