@@ -1,9 +1,15 @@
 <template>
-  <Content />
+  <app>
+    <Content />
+  </app>
 </template>
 <script>
+import { App } from 'lagabu/lib/entry-libs.js'
 export default {
-  name: 'layout'  
+  name: 'layout',
+  components: {
+    App
+  }  
 }
 </script>
 <style lang="less">

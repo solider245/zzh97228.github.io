@@ -17,10 +17,13 @@
   },
   "homepage": "https://github.com/zzh97228/zzh97228.github.io#readme",
   "devDependencies": {
+    "lagabu": "^0.0.1-alpha.5",
     "less": "^3.11.1",
     "less-loader": "^6.1.0",
     "prettier": "^2.0.5",
     "shelljs": "^0.8.4",
-    "vitepress": "^0.1.1"
+    "vitepress": "^0.3.1",
+    "vue": "^3.0.0-beta.14",
+    "vue-router": "^4.0.0-alpha.12"
   }
 }
