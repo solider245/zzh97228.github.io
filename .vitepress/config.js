@@ -10,6 +10,6 @@ module.exports = {
       },
     ],
   ],
-  base: 'https://github.com/zzh97228/zzh97228.github.io/tree/master/dist/'
+  base: '.'
   // dest: '../dist',
 };
