@@ -1,1 +1,0 @@
-import{f as n,g as s,H as a}from"./common-5ddf5050.js";const t='{"title":"Two-Sum","frontmatter":{},"headers":[{"level":2,"title":"Summary","slug":"summary"},{"level":2,"title":"Solution","slug":"solution"}],"lastUpdated":1593220250725}';var p={};const o=a('',8);p.render=function(a,t){return n(),s("div",null,[o])};export default p;export{t as __pageData};
