@@ -1,6 +1,9 @@
 import 'lagabu/dist/lagabu.min.css';
 import './assets/main.less';
+import 'prismjs/themes/prism-coy.css';
+// import 'prismjs/themes/prism-okaidia.css';
 import Layout from './Layout.vue';
+
 export default {
   Layout,
   NotFound: () => 'custom 404', // <- this is a Vue 3 functional component

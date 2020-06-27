@@ -1,26 +1,33 @@
 <row gutter="xs">
-<row-item sm="12" md="6" v-for="(c, i) in cards" :key="i">
-<card :elevation="null">
+<row-item sm="12" md="6" v-for="(c, i) in cards" :key="i" style="padding-bottom: 8px;">
+<card outlined :elevation="null">
   <card-title>
     {{ c.title }}
   </card-title>
   <card-subtitle>
     {{ c.subtitle }}
   </card-subtitle>
-  <card-content>
-    <btn color="primary" :href="c.href">{{ c.btnName }}</btn>
-  </card-content>
+  <card-actions>
+    <btn color="primary" :href="c.href">
+    <icon left>hand-point-right</icon>
+    {{ c.btnName }}
+    </btn>
+  </card-actions>
 </card>
 </row-item>
+<row-item :cols="12">
+  <card outlined>
+    <card-title>Resume</card-title>
+    <card-subtitle>我的个人简历</card-subtitle>
+     <card-actions>
+    <btn color="primary" href="/resume.html">
+    <icon left brand>readme</icon>
+    my-resume
+    </btn>
+  </card-actions>
+  </card>
+</row-item>
 </row>
-
-
-<card :elevation="null" style="margin-top: 12px;">
-  <card-title>
-    Lagabu
-  </card-title>
-</card>
-
 
 <script>
 import * as compos from 'lagabu/lib/components/index.js'
@@ -39,10 +46,10 @@ export default {
           btnName: 'leetcode-solution'
         },
         {
-          title: 'Resume',
-          subtitle: 'Lagabu的个人简历',
-          href: '/resume.html',
-          btnName: 'resume'
+          title: 'README',
+          subtitle: '建立Lagabu\'s Blog的原因',
+          href: '/README.html',
+          btnName: 'readme'
         }
       ]
     }

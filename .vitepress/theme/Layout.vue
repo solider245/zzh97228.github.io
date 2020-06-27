@@ -10,25 +10,13 @@
       <btn nav link color="primary" href="/resume.html">Resume</btn>
 
       <btn nav link color="primary" href="/leetcode/index.html">Leetcode</btn>
-      <dropdown to="#app">
-        <template v-slot:activator>
-          <btn nav link color="primary">About</btn>
-        </template>
-        <list elevation="xs">
-          <list-item href="/README.html">
-            <icon left>book-reader</icon>
-            README
-          </list-item>
-          <list-item href="https://github.com/zzh97228">
-            <icon brand left>github-alt</icon>
-            Github
-          </list-item>
-        </list>
-      </dropdown>
+      <btn round nav link href="https://github.com/zzh97228">
+        <icon brand style="font-size: 16px;">github</icon>
+      </btn>
     </nav-bar>
     <substance min-height="calc(100vh - 48px)">
       <container max-width="960px" style="margin: auto;padding: 16px 0">
-        <card>
+        <card elevation="md" min-height="calc(100% - 32px)">
           <card-content>
             <Content />
           </card-content>
