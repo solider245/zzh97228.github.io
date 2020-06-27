@@ -1,0 +1,1 @@
+import{f as n,g as s,H as a}from"./common-5ddf5050.js";const p='{"title":"Add Two Numbers","frontmatter":{},"headers":[{"level":2,"title":"Summary","slug":"summary"},{"level":2,"title":"Solution","slug":"solution"}],"lastUpdated":1593221159327.6057}';var t={};const o=a('',10);t.render=function(a,p){return n(),s("div",null,[o])};export default t;export{p as __pageData};

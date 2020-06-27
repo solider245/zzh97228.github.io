@@ -1,5 +1,5 @@
 module.exports = {
-  title: '个人页面',
+  title: 'Lagabu\'s Blog',
   description: 'Lagabu的个人博客',
   head: [
     [

@@ -1,0 +1,1 @@
+import{f as e,g as t,H as r}from"./common-5ddf5050.js";const o='{"title":"Introduction","frontmatter":{},"headers":[{"level":2,"title":"Introduction","slug":"introduction"}],"lastUpdated":1593225414385.366}';var n={};const a=r('',5);n.render=function(r,o){return e(),t("div",null,[a])};export default n;export{o as __pageData};

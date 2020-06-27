@@ -1,4 +1,5 @@
 import 'lagabu/dist/lagabu.min.css';
+import './assets/main.less';
 import Layout from './Layout.vue';
 export default {
   Layout,
