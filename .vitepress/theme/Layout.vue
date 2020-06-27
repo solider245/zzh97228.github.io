@@ -10,7 +10,7 @@
       <btn nav link color="primary" href="/resume.html">Resume</btn>
 
       <btn nav link color="primary" href="/leetcode/index.html">Leetcode</btn>
-      <btn round nav link href="https://github.com/zzh97228">
+      <btn round nav link target="blank" href="https://github.com/zzh97228">
         <icon brand style="font-size: 16px;">github</icon>
       </btn>
     </nav-bar>

@@ -13,13 +13,35 @@ body {
 *::before {
   box-sizing: border-box;
 }
-
-ul,ol {
-  padding-left: 20px;
+a {
+  text-decoration: none;
+}
+.header-anchor {
+  color: #eaecef;
 }
 
-h1,h2 {
-  border-bottom: 1px solid #dfdfdf;
-  margin: 0;
-  padding: 16px 0;
+ul,
+ol {
+  padding-left: 2em;
+}
+
+h1,
+h2 {
+  border-bottom: 1px solid #eaecef;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  padding-bottom: 1rem;
+  line-height: 1.25;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+pre {
+  background-color: #f6f8fa;
+}
+
+li + li {
+  margin-top: 0.3em;
 }
