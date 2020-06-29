@@ -1,19 +1,9 @@
 # Leetcode
 
-- <checkbox v-model="checked"></checkbox> [two-sum](/leetcode/two-sum/index.html)
-- <checkbox v-model="checked"></checkbox> [add-two-numbers](/leetcode/add-two-numbers/index.html)
+个人 leetcode 解题模板
 
+### 简单题
 
-<script>
-import { Checkbox } from 'lagabu/lib/components/index.js'
-export default {
-  components: {
-    Checkbox
-  },
-  data() {
-    return {
-      checked: true
-    }
-  }
-}
-</script>
+- [两数相加](/leetcode/add-two-numbers/index.html)
+- [两数之和](/leetcode/two-sum/index.html)
+- [无重复最长子串](/leetcode/longest-substring/index.html)

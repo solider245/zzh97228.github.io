@@ -1,33 +1,22 @@
 <row gutter="xs">
-<row-item sm="12" md="6" v-for="(c, i) in cards" :key="i" style="padding-bottom: 8px;">
+<row-item sm="12" md="6" v-for="(c, i) in cards" :key="i" shrink style="padding-bottom: 8px;">
 <card outlined :elevation="null">
-  <card-title>
-    {{ c.title }}
-  </card-title>
-  <card-subtitle>
-    {{ c.subtitle }}
-  </card-subtitle>
-  <card-actions>
-    <btn color="primary" :href="c.href">
-    <icon left>hand-point-right</icon>
-    {{ c.btnName }}
-    </btn>
-  </card-actions>
+<card-title>
+{{ c.title }}
+</card-title>
+<card-subtitle>
+{{ c.subtitle }}
+</card-subtitle>
+<card-actions>
+<btn color="primary" :href="c.href">
+<icon left>hand-point-right</icon>
+{{ c.btnName }}
+</btn>
+</card-actions>
 </card>
 </row-item>
-<row-item :cols="12">
-  <card outlined>
-    <card-title>Resume</card-title>
-    <card-subtitle>我的个人简历</card-subtitle>
-     <card-actions>
-    <btn color="primary" href="/resume.html">
-    <icon left brand>readme</icon>
-    my-resume
-    </btn>
-  </card-actions>
-  </card>
-</row-item>
 </row>
+<iframe src="/resume.html"></iframe>
 
 <script>
 import * as compos from 'lagabu/lib/components/index.js'
