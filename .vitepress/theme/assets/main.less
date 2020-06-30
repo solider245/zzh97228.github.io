@@ -30,16 +30,32 @@ h2 {
   border-bottom: 1px solid #eaecef;
   margin-top: 24px;
   margin-bottom: 16px;
-  padding-bottom: 1rem;
+  padding-bottom: 1.5rem;
   line-height: 1.25;
 }
 p {
   margin-top: 0;
   margin-bottom: 1rem;
 }
-
+code {
+  font-weight: 600;
+}
 pre {
-  background-color: #f6f8fa;
+  border-radius: 4px;
+  padding: 1rem;
+
+  code {
+    background: none;
+    font-weight: 400;
+  }
+}
+pre,
+code {
+  font-family: Consolas, 'Courier New', 'Microsoft YaHei', monospace;
+  font-variant: tabular-nums;
+  line-height: 1.5;
+  font-size: 14px;
+  background-color: #f7f7f7;
 }
 
 li + li {

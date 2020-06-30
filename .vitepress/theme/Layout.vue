@@ -32,6 +32,7 @@
 </template>
 
 <script>
+
 import * as compos from 'lagabu/lib/components/index.js';
 export default {
   name: 'layout',
@@ -49,3 +50,6 @@ export default {
 
 };
 </script>
+
+<style lang="less">
+</style>

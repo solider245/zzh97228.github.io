@@ -1,6 +1,7 @@
 import 'lagabu/dist/lagabu.min.css';
-import './assets/main.less';
 import 'prismjs/themes/prism-coy.css';
+import './assets/main.less';
+
 // import 'prismjs/themes/prism-okaidia.css';
 import Layout from './Layout.vue';
 
