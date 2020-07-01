@@ -4,6 +4,7 @@ jobs:
     docker:
       - image: circleci/node:12
     steps:
+      - checkout
       - run: yarn
       - run: yarn build
 workflows:
