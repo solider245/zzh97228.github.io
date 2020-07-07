@@ -10,6 +10,4 @@ module.exports = {
       },
     ],
   ],
-  // base: '.'
-  // dest: '../dist',
 };

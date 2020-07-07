@@ -1,5 +1,5 @@
 <template>
-  <app>
+  <app id="app">
     <nav-bar v-if="!atResume" elevation="xs" height="48px" style="padding-right: 16px;">
       <nav-bar-title>
         <btn href="/index.html" depressed>Lagabu's Blog</btn>
@@ -15,8 +15,8 @@
     <substance min-height="calc(100vh - 48px)">
       <container max-width="960px" style="margin: auto;padding: 16px 0">
         <card :elevation="atResume ? null : 'md'" min-height="calc(100% - 32px)">
-          <card-content>
-            <Content />
+          <card-content :style="contentStyle">
+            <Content class="theme" />
           </card-content>
         </card>
       </container>
@@ -32,19 +32,26 @@
 </template>
 
 <script>
-
-import * as compos from 'lagabu/lib/components/index.js';
+import { useRoute } from 'vitepress'
 export default {
   name: 'layout',
-  components: {
-    ...compos,
-  },
-  mounted() {
-    console.log(window.location.pathname)
+  setup() {
+    const route = useRoute();
+    return {
+      route
+    }
   },
   computed: {
     atResume() {
-      return window.location.pathname === '/resume.html'
+      return this.route.path.indexOf('resume') !== -1
+    },
+    atHome() {
+      return this.route.path === '/' || this.route.path === '/index.html'
+    },
+    contentStyle() {
+      return {
+        'padding': this.atResume || this.atHome ? '4px' : '8px 26px'
+      }
     }
   }
 
