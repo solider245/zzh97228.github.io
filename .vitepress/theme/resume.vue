@@ -151,36 +151,35 @@
                   </row>
                 </card-title>
                 <card-subtitle>
-                  基于vue@3.0.0-beta开发的组件库 -
+                  <b class="primary-color--text">Lagabu</b>是基于vue3.0的轻量级web响应式组件库。
                   <a
                     href="https://github.com/zzh97228/Lagabu"
                   >https://github.com/zzh97228/Lagabu</a>
                 </card-subtitle>
                 <card-content>
-                  <p style="line-height: 2;">
-                    <b class="primary-color--text">Lagabu</b>是基于vue3.0的轻量级web响应式组件库，遵从Material-Design的设计模式，目的是提供一种可高度自定义但功能又相对简单的容器组件。
-                    语言上使用
-                    <strong
-                      class="primary-color--text"
-                    >typescript</strong>编写内容，
-                    <b class="primary-color--text">less</b>编写样式，配合vue3.0的hooks式
-                    写法提高组件的复用性，最后使用
-                    <b
-                      class="primary-color--text"
-                    >webpack</b>进行打包。组件的设计上更多参考
-                    <a
-                      class="primary-color--text"
-                      href="https://vuetifyjs.com/zh-Hans/getting-started/quick-start/"
-                    >Vuetify</a>，
-                    样式设计上则参考
-                    <a
-                      class="primary-color--text"
-                      href="https://www.antdv.com/docs/vue/introduce-cn/"
-                    >ant-design</a>，现已发布几个pre-alpha版本至npm上，正在对组件进行测试，并逐渐应用至自己的个人博客、个人项目中。
-                    由于
-                    <a
-                      class="primary-color--text"
-                    >vue3.0</a>仍处于beta阶段，对于新版本的用法大多基于源码的阅读而来，这个组件库因此会随着vue版本更新而产生对应的变化。
+                  <p>
+                    目的：使用vue3.0来编写如卡片、flex布局、输入框、下拉框等基础组件。结合了MaterialDesign的设计理念，
+                    以及ant-design的组件功能和样式。完全使用<b class="primary-color--text">typescript</b>而非tsx/jsx语法来编写组件，功能相对丰富但又有足够的
+                    自定义空间。所以此组件库中的组件更多的是提供一个容器，使用者可通过插槽自定义其中的内容。
+                  </p>
+                  <p>
+                    特性：
+                    <ol>
+                      <li>使用flex布局的栅格化系统，并可使用依赖注入为子级元素添加内边距。</li>
+                      <li>可自定义主题颜色而无需在webpack配置中定义颜色变量值。</li>
+                      <li>使用Boostrap工具类的形式为组件提供颜色的变换。</li>
+                      <li>基于vue3.0依赖注入方式写作的表单鉴权组件，装配更加灵活。</li>
+                      <li>将<b>tooltip</b>等组件转换为指令的形式，同时从原文档流中脱离，并挂载在根元素下。</li>
+                    </ol>
+                  </p>
+                  <p>
+                    现阶段成果：
+                    <ol>
+                      <li>发布了几个pre-alpha版本，写了基础的文档，正在完善每个组件的单元测试。</li>
+                      <li>已配合vitepress使用在自己的博客中。正在个人项目中逐步取代其他组件库。</li>
+                      <li>使用vue3.0的功能写作了一个简单的富文本编辑器。</li>
+                      <li>正在编写高级组件如markdown编辑器、头像裁剪器等。</li>
+                    </ol>
                   </p>
                   <img width="256" :src="lagabuLogo" />
                 </card-content>
