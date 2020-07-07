@@ -1,6 +1,6 @@
 <template>
   <app id="app">
-    <nav-bar v-if="!atResume" elevation="xs" height="48px" style="padding-right: 16px;">
+    <nav-bar v-show="!atResume" elevation="xs" height="48px" style="padding-right: 16px;">
       <nav-bar-title>
         <btn href="/index.html" depressed>Lagabu's Blog</btn>
       </nav-bar-title>
@@ -21,7 +21,7 @@
         </card>
       </container>
     </substance>
-    <card v-if="!atResume" color="primary" height="128px">
+    <card v-show="!atResume" color="primary" height="128px">
       <row justify="center" align="center" style="height: 100%;">
         <row-item shrink>
           <span class="theme--dark">Lagabu's Blog</span>

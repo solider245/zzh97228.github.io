@@ -16,6 +16,7 @@
     </card>
   </row-item>
 </row>
+<iframe src="/resume.html"></iframe>
 
 <script>
 export default {
