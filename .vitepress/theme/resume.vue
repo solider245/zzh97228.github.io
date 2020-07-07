@@ -14,7 +14,7 @@
             </row-item>
             <row-item style="width: 100%;">
               <p style="font-weight: 600;">个人介绍：</p>
-              <p>我是一名热爱前端技术的web前端开发者，最近热衷于写vue3组件。</p>
+              <p>我是一名热爱前端技术的web前端开发者，最近热衷于写vue3组件。在实习的过程中常思考如何提高开发效率，因此便萌生了编写组件库的想法，并结合各大成功的组件库，去粗取精，努力为vue生态做贡献。</p>
             </row-item>
             <row-item>
               <p style="font-weight: 600;">个人信息：</p>
@@ -176,12 +176,13 @@
                     现阶段成果：
                     <ol>
                       <li>发布了几个pre-alpha版本，写了基础的文档，正在完善每个组件的单元测试。</li>
-                      <li>已配合vitepress使用在自己的博客中。正在个人项目中逐步取代其他组件库。</li>
+                      <li>已配合vitepress使用在自己的博客中，并用组件库编写了此简历。正在个人项目中逐步取代其他组件库。</li>
                       <li>使用vue3.0的功能写作了一个简单的富文本编辑器。</li>
                       <li>正在编写高级组件如markdown编辑器、头像裁剪器等。</li>
                     </ol>
                   </p>
-                  <img width="256" :src="lagabuLogo" />
+                  <img :src="buttons" style="width: 100%;" />
+                  <img :src="grids" style="width: 100%;" />
                 </card-content>
               </card>
             </row-item>
@@ -308,6 +309,8 @@ import flightline from './assets/flightline.png'
 import snqmx from './assets/snqmx.png'
 import spyon2 from './assets/spy-on-2.png'
 import lagabuLogo from './assets/lagabu-logo.png';
+import buttons from './assets/buttons.png';
+import grids from './assets/grids.png';
 
 export default {
   data() {
@@ -316,6 +319,8 @@ export default {
       flightline,
       snqmx,
       spyon2,
+      buttons,
+      grids,
       lagabuLogo,
       skills:[
         {
