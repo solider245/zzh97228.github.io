@@ -4,7 +4,8 @@
   "description": "personal blog",
   "scripts": {
     "dev": "npx vitepress",
-    "build": "node ./build.js"
+    "build": "node ./build.js",
+    "deploy": "cross-env node ./deploy.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,8 @@
   },
   "homepage": "https://github.com/zzh97228/zzh97228.github.io#readme",
   "devDependencies": {
+    "ali-oss": "^6.9.1",
+    "cross-env": "^7.0.2",
     "lagabu": "^0.0.1-alpha.13",
     "less": "^3.11.1",
     "less-loader": "^6.1.0",
