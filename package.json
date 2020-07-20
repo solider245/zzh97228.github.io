@@ -20,13 +20,13 @@
   "devDependencies": {
     "ali-oss": "^6.9.1",
     "cross-env": "^7.0.2",
-    "lagabu": "^0.0.1-alpha.13",
+    "lagabu": "^0.0.1-alpha.14",
     "less": "^3.11.1",
     "less-loader": "^6.1.0",
     "prettier": "^2.0.5",
     "prismjs": "^1.20.0",
     "shelljs": "^0.8.4",
-    "vitepress": "0.4.0",
+    "vitepress": "^0.4.1",
     "vue": "^3.0.0-beta.18",
     "vue-router": "^4.0.0-beta.1"
   }

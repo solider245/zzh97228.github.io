@@ -2060,10 +2060,10 @@ koa@^2.11.0:
     type-is "^1.6.16"
     vary "^1.1.2"
 
-lagabu@^0.0.1-alpha.13:
-  version "0.0.1-alpha.13"
-  resolved "https://registry.yarnpkg.com/lagabu/-/lagabu-0.0.1-alpha.13.tgz#f55d09af6bdde29f388334d3dfcff1f4ec88565c"
-  integrity sha512-NDFA+BxxKoJcYDQVrkNWzQyp74SW9T2KfzMsjWLniIxTtQIiHCpRr/7LOBFJGHgpXxastQJ9ptFvXwcTdvuUug==
+lagabu@^0.0.1-alpha.14:
+  version "0.0.1-alpha.14"
+  resolved "https://registry.yarnpkg.com/lagabu/-/lagabu-0.0.1-alpha.14.tgz#ea83e4eced519711ffc409caf3d835b7da33c7bc"
+  integrity sha512-v55TU5+ZHhkrPQ4HxSyFDcFWPWIj0oe3x8IsfrlirH3+H8eZ+wPYr6R0uG2EKGcWbazUaXn8gMtezaWvyWzisQ==
 
 less-loader@^6.1.0:
   version "6.1.0"
@@ -3478,10 +3478,10 @@ vite@^1.0.0-beta.1:
     vue "^3.0.0-beta.14"
     ws "^7.2.3"
 
-vitepress@0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/vitepress/-/vitepress-0.4.0.tgz#4f44213723706858b7d3cf88807a8dd56f1cc4cf"
-  integrity sha512-70OKj5YAfFVUBFVMWeAT+ZtPIyYTg2ZfCSYulAC07Lz6iZR7T/Co65EFXNoqAIudVO5u0pMaNfUm59msd1vj+A==
+vitepress@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/vitepress/-/vitepress-0.4.1.tgz#564df6a79a99420c7521a5852b7cbd8ab381c53d"
+  integrity sha512-zAjsK+PvGxjT1AP6F242yRVH7cb9GH+4nUuF8kYhd0+Vue8za0k7jJHAIxcw7C+ucvwVjUOy2znTajMsvlve2w==
   dependencies:
     "@vue/compiler-sfc" "^3.0.0-beta.15"
     "@vue/server-renderer" "^3.0.0-beta.15"

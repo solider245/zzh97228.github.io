@@ -1,5 +1,5 @@
-import lagabu from 'lagabu/lib/index.js';
-import 'lagabu/src/styles/styles.less';
+import lagabu from 'lagabu/dist/lagabu.es.min.js';
+import 'lagabu/dist/lagabu.min.css';
 import './assets/main.less';
 import 'vitepress/dist/client/theme-default/styles/vars.css';
 import 'vitepress/dist/client/theme-default/styles/custom-blocks.css';
