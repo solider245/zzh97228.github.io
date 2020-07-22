@@ -1,33 +1,3 @@
-```js
-function defineReactive(data, key) {
-  let tmpValue = data[key];
-
-  Object.defineProperty(data, key, {
-    set(val) {
-      tmpValue = val;
-    },
-    get() {
-      return tmpValue;
-    },
-  });
-
-  if (typeof tmpValue === 'object') {
-    reactive(tmpValue);
-  }
-}
-
-function reactive(data) {
-  if (typeof data === 'object') {
-    Object.keys(data).forEach((key) => {
-      defineReactive(data, key);
-    });
-  }
-
-  return data;
-}
-```
-
-```js
 class Dep {
   constructor() {
     this.deps = new Set();
@@ -75,11 +45,14 @@ class Watcher {
     popTarget();
     return this.value;
   }
+  depend() {
+    this.dep.depend();
+  }
   update() {
     if (this.watch) {
       const old = this.value;
       this.get();
-      this.callback(this.value, oldValue);
+      this.callback(this.value, old);
     } else if (this.computed) {
       this.get();
       this.dep.notify();
@@ -93,6 +66,22 @@ function watch(getter, callback) {
   new Watcher(getter, { watch: true, callback });
 }
 
+function watchEffect(getter) {
+  new Watcher(getter);
+}
+
+function computed(getter) {
+  const watcher = new Watcher(getter, { computed: true });
+  const obj = { value: undefined };
+  const res = new Proxy(obj, {
+    get() {
+      watcher.depend();
+      return watcher.get();
+    },
+  });
+  return res;
+}
+
 function reactive(data) {
   if (typeof data !== 'object') return;
   return createReactive(data);
@@ -101,25 +90,32 @@ function reactive(data) {
 function createReactive(raw) {
   const dep = new Dep();
 
-  const reactive = new Proxy(raw, {
+  const res = new Proxy(raw, {
     set(target, key, val) {
       const result = Reflect.set(target, key, val);
-      console.log(key + '  ' + val);
       dep.notify();
+
       return result;
     },
     get(target, key) {
       const result = Reflect.get(target, key);
-
+      dep.depend();
       if (typeof result === 'object') {
         return reactive(result);
       }
-      dep.depend();
-
       return result;
     },
   });
 
-  return reactive;
+  return res;
 }
-```
+
+const state = reactive({ k: 2 });
+const key = computed(() => state.k + 1);
+
+watchEffect(() => {
+  console.log('state.k is: ' + state.k);
+});
+state.k = 5;
+
+console.log(key.value);
