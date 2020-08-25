@@ -164,3 +164,207 @@ function jump2(n) {
   return dp[n];
 }
 ```
+
+## 阿里二面
+
+1、下列事件哪个不是由鼠标触发的事件（D）
+A、click
+B、contextmenu
+C、mouseout
+D、keydown
+
+2、下面关于 CSS 布局的描述，不正确的是？ （D）
+A、块级元素实际占用的宽度与它的 width 属性有关；
+B、块级元素实际占用的宽度与它的 border 属性有关；
+C、块级元素实际占用的宽度与它的 padding 属性有关；
+D、块级元素实际占用的宽度与它的 background 属性有关。
+
+3、下面有关 html 的描述，不推荐的是？(B)
+A、在页面顶部添加 doctype 声明；
+B、在 </head> … <body> 中间插入 HTML 代码；
+C、避免使用 <font> 标签；
+D、使用 <table> 元素展现学生成绩表等数据。
+
+4、浏览器在一次 HTTP 请求中，需要传输一个 4097 字节的文本数据给服务端，可以采用的方式? (E)
+A、存入 IndexdDB
+B、写入 COOKIE
+C、放在 URL 参数
+D、写入 Session
+E、使用 POST
+F、放在 Local Storage
+
+5、下面哪个属性不会让 div 脱离文档流（normal flow）？(C)
+A、position: absolute;
+B、position: fixed;
+C、position: relative;
+D、float: left;
+
+6、请编程计算 n 的阶乘
+// 代码写在这，编程语言不限，请用递归实现
+
+```js
+function resolve(n) {
+if (n <= 0) return 0
+if (n === 1) return 1
+return resolve(n - 1) \* n
+}
+```
+
+7、请封装一个异步函数，入参为图片地址，在图片加载成功之后返回 true,失败返回 false.
+// 代码写在这
+
+```js
+function helper(src) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => {
+      resolve(true);
+    };
+    img.onerror = () => {
+      resolve(false);
+    };
+    img.src = src;
+  });
+}
+```
+
+8、请写出一下代码输出的日志结果
+
+```js
+console.log('1');
+
+setTimeout(function () {
+  console.log('2');
+  new Promise(function (resolve) {
+    console.log('3');
+    resolve();
+  }).then(function () {
+    console.log('4');
+  });
+});
+
+new Promise(function (resolve) {
+  console.log('5');
+  setTimeout(function () {
+    console.log('6');
+  });
+  resolve();
+}).then(function () {
+  console.log('7');
+});
+```
+
+[1,5,7,2,3,4,6]
+
+9、在不固定宽度的浏览器里，有 3 列布局，其中左右 2 列是固定宽度 100px，中间的 1 列充满剩下的空间，纯 css 实现，请写出 2 种或以上的实现方法
+// 代码写在这里 ↓↓↓↓↓
+// html 部分
+
+```
+<div class="container">
+  <div class="left"></div>
+  <div class="middle"></div>
+  <div class="right"></div>
+</div>
+
+<div class="container2">
+  <div class="left2"></div>
+  <div class="middle2"></div>
+  <div class="right2"></div>
+</div>
+// css部分 .container { width: 100%; display: flex } .left { width: 100px; }
+.right { width: 100px; } .middle { flex: 1; } .container2 { position: relative;
+width: 100%; height: 100%; } .left2 { width: 100px; position: absolute; top: 0;
+left: 0; bottom: 0; } .right2 { width: 100px; position: absolute; right: 0; top:
+0; bottom: 0; } .middle2 { position: absolute; top: 0; bottom: 0; left: 100px;
+right: 100px; }
+```
+
+// 代码写在这里 ↑↑↑↑↑
+
+10、请实现 find 函数，使下列的代码调用正确。
+
+```js
+约定：
+• title数据类型为String
+• userId为主键，数据类型为Number
+
+var data = [
+ {userId: 8, title: 'title1'},
+ {userId: 11, title: 'other'},
+ {userId: 15, title: null},
+ {userId: 19, title: 'title2'}
+];
+
+//查找data中，符合条件的数据，并进行排序
+var result = find(data).where({
+ "title": /\d$/
+}).orderBy('userId', 'desc');
+
+console.log(result);
+// [{ userId: 19, title: 'title2'}, { userId: 8, title: 'title1' }];
+
+var find = function(origin) {
+ //将find方法实现的代码谢在这里
+ const result = [];
+ const obj = {
+ 	where: (record) => {
+   	if (typeof record !== 'object') return;
+
+       for (let i = 0;i < origin.length;i++) {
+           const o = origin[i];
+           let flag = true;
+         	for (let key in record) {
+             if (key === 'userId') {
+               if (typeof o[key] !== 'number' || o[key] !== record[key]) {
+                 flag = false;
+                 break;
+               }
+             } else if (key === 'title') {
+               if (Object.prototype.toString.call(record[key]) === '[object RegExp]') {
+                 const reg = new RegExp(record[key].source)
+                 if (!reg.test(o[key])) {
+                   flag = false;
+                   break;
+                 }
+               } else {
+                 if (o[key] !== record[key]) {
+                   flag = false;
+                   break;
+                 }
+               }
+             } else {
+               flag = false;
+               break;
+             }
+           }
+           if (flag) {
+             result.push(o);
+           }
+       }
+
+
+   	return obj;
+ 	},
+   orderBy: (keyname, order) => {
+    result.sort((a, b) => {
+         if (order === 'desc') {
+           return b[keyname] - a[keyname]
+         } else {
+           return a[keyname] - b[keyname]
+         }
+       })
+       return obj
+ 	}
+ }
+ obj.valueOf = () => result;
+ return obj;
+}
+```
+
+11、四个人（A、B、C、D）晚上过桥，并且只有一个手电筒，每次只能过两个人，
+并且还需要有一个人回来传递手电筒，每次只能过两个人，并且还需要有一个人回来传递手电筒，
+四个人过桥的速度不一样分别是 1、2、5、10 分钟，问怎么过桥最快？总共用多长时间？
+
+ab-b-cd-a-ab
+17 分钟
