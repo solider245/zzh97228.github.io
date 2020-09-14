@@ -211,9 +211,8 @@ D、float: left;
 ```
 
 6、请编程计算 n 的阶乘
-// 代码写在这，编程语言不限，请用递归实现
-
 ```js
+// 代码写在这，编程语言不限，请用递归实现
 function resolve(n) {
 if (n <= 0) return 0
 if (n === 1) return 1
@@ -222,9 +221,8 @@ return resolve(n - 1) \* n
 ```
 
 7、请封装一个异步函数，入参为图片地址，在图片加载成功之后返回 true,失败返回 false.
-// 代码写在这
-
 ```js
+// 代码写在这
 function helper(src) {
   return new Promise((resolve, reject) => {
     const img = new Image();
@@ -265,13 +263,17 @@ new Promise(function (resolve) {
 });
 ```
 
+```
 [1,5,7,2,3,4,6]
+```
 
 9、在不固定宽度的浏览器里，有 3 列布局，其中左右 2 列是固定宽度 100px，中间的 1 列充满剩下的空间，纯 css 实现，请写出 2 种或以上的实现方法
+
+```js
 // 代码写在这里 ↓↓↓↓↓
 // html 部分
 
-```html
+
 <div class="container">
   <div class="left"></div>
   <div class="middle"></div>
@@ -289,16 +291,18 @@ width: 100%; height: 100%; } .left2 { width: 100px; position: absolute; top: 0;
 left: 0; bottom: 0; } .right2 { width: 100px; position: absolute; right: 0; top:
 0; bottom: 0; } .middle2 { position: absolute; top: 0; bottom: 0; left: 100px;
 right: 100px; }
-```
+
 
 // 代码写在这里 ↑↑↑↑↑
+```
 
 10、请实现 find 函数，使下列的代码调用正确。
 
-```js
 约定：
 • title数据类型为String
 • userId为主键，数据类型为Number
+
+```js
 
 var data = [
  {userId: 8, title: 'title1'},

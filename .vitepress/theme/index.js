@@ -1,4 +1,4 @@
-import lagabu from 'lagabu/dist/lagabu.es.min.js';
+import lagabu from 'lagabu/src/index';
 import 'lagabu/dist/lagabu.min.css';
 import './assets/main.less';
 import 'vitepress/dist/client/theme-default/styles/vars.css';
