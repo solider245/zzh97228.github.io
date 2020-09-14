@@ -5,7 +5,7 @@
   "scripts": {
     "clean": "rimraf ./dist ./.vitepress/dist",
     "dev": "cross-env npx vitepress",
-    "build": "cross-env npx vitepress build && cp ./.nojekyll ./.vitepress/dist"
+    "build": "cross-env npx vitepress build && mv ./.vitepress/dist ./dist && cp ./.nojekyll ./dist"
   },
   "repository": {
     "type": "git",

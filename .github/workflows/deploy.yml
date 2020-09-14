@@ -28,5 +28,5 @@ jobs:
         with:
           BASE_BRANCH: master
           BRANCH: gh-pages
-          FOLDER: ./.vitepress/dist
+          FOLDER: dist
           SSH: true
