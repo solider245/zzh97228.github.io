@@ -1,0 +1,64 @@
+<html lang="en-US">
+  <head>
+    <title>在 centos 上构建 MongoDB | Lagabu's Blog</title>
+    <meta name="description" content="A VitePress site">
+    <link rel="stylesheet" href="/_assets/style.2632d47a.css">
+    <link rel="modulepreload" href="/_assets/common-3faa3bdf.js">
+    <link rel="modulepreload" href="/_assets/devops_index.md.222ee29e.lean.js">
+    <link rel="modulepreload" href="/_assets/app.01e9d3ce.js">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="referrer" content="no-referrer">
+    
+  </head>
+  <body>
+    <div id="app"><div id="app" data-app="true" class="l-application"><div class="l-application__content"><!--[--><nav class="l-nav-bar l-elevation-xs" style="height:48px;padding-right:16px;"><div class="l-nav-bar__content"><div class="l-nav-bar-title"><a class="l-btn l-btn--depressed l-elevation-xs theme--light" href="/index.html" type="button" style=""><span class="l-btn__content"><!--[-->Lagabu&#39;s Blog<!--]--></span></a></div><div class="l-white-spacer"></div><a class="l-btn l-btn--link l-btn--nav l-elevation-xs theme--light primary-color--text" href="/resume.html" type="button" style=""><span class="l-btn__content"><!--[-->Resume<!--]--></span></a><a class="l-btn l-btn--link l-btn--nav l-elevation-xs theme--light primary-color--text" href="/leetcode/index.html" type="button" style=""><span class="l-btn__content"><!--[-->Leetcode<!--]--></span></a><a class="l-btn l-btn--round l-btn--link l-btn--nav l-elevation-xs theme--light" target="blank" href="https://github.com/zzh97228" type="button" style=""><span class="l-btn__content"><!--[--><i class="l-icon fab fa-github" style="font-size:16px;"></i><!--]--></span></a></div></nav><main class="l-substance" style="min-height:calc(100vh - 48px);"><div class="l-substance__content"><div class="l-container" style="max-width:960px;margin:auto;padding:16px 0;"><div class="l-card l-card--gutter l-elevation-md" style="min-height:calc(100% - 32px);"><div class="l-card-content" style="padding:8px 26px;"><div class="theme"><h2 id="在-centos-上构建-mongodb"><a class="header-anchor" href="#在-centos-上构建-mongodb" aria-hidden="true">#</a> 在 centos 上构建 MongoDB</h2><h3 id="配置命令"><a class="header-anchor" href="#配置命令" aria-hidden="true">#</a> 配置命令</h3><div class="language-bash"><pre><code><span class="token comment"># 下载获取工具</span>
+yum <span class="token function">install</span> -y openssl <span class="token function">wget</span>
+
+<span class="token comment"># 获取Mongodb的binary压缩包</span>
+<span class="token function">wget</span> https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-4.0.5.tgz
+
+<span class="token comment"># 解压下载包</span>
+<span class="token function">tar</span> -zxvf mongodb-linux-x86_64-4.0.5.tgz
+
+<span class="token comment"># 移动到指定目录</span>
+<span class="token function">mv</span> mongodb-linux-x86_64-4.0.5 /usr/local/mongodb
+
+<span class="token comment"># 创建db和log文件夹</span>
+<span class="token builtin class-name">cd</span> /usr/local/mongodb <span class="token operator">&amp;&amp;</span> <span class="token function">mkdir</span> -p db <span class="token operator">&amp;&amp;</span> <span class="token function">mkdir</span> -p log
+
+<span class="token comment"># 创建log文件</span>
+<span class="token function">touch</span> ./log/mongodb.log <span class="token punctuation">\</span>
+
+<span class="token comment"># 给两个文件夹加上权限</span>
+<span class="token function">chmod</span> +775 ./db <span class="token operator">&amp;&amp;</span> <span class="token function">chmod</span> +775 ./log <span class="token punctuation">\</span>
+
+<span class="token comment"># 设置全局入口</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$PATH</span>:/usr/local/mongodb/bin
+</code></pre></div><h3 id="配置文件"><a class="header-anchor" href="#配置文件" aria-hidden="true">#</a> 配置文件</h3><div class="language-bash"><pre><code><span class="token comment"># /usr/local/mongodb/mongodb.conf</span>
+
+<span class="token assign-left variable">port</span><span class="token operator">=</span><span class="token number">27017</span> <span class="token comment">#端口  </span>
+
+<span class="token assign-left variable">dbpath</span><span class="token operator">=</span>/usr/local/mongodb/db <span class="token comment">#数据库存文件存放目录  </span>
+
+<span class="token assign-left variable">logpath</span><span class="token operator">=</span> /usr/local/mongodb/log/mongodb.log <span class="token comment">#日志文件存放路径  </span>
+
+<span class="token assign-left variable">logappend</span><span class="token operator">=</span>true <span class="token comment">#追加方式写日志  </span>
+
+<span class="token assign-left variable">maxConns</span><span class="token operator">=</span><span class="token number">100</span> <span class="token comment">#最大同时连接数  </span>
+
+<span class="token assign-left variable">auth</span><span class="token operator">=</span>true <span class="token comment">#启用验证  </span>
+
+<span class="token assign-left variable">fork</span><span class="token operator">=</span>true <span class="token comment">#可在后台运行</span>
+
+<span class="token assign-left variable">journal</span><span class="token operator">=</span>true <span class="token comment">#每次写入会记录一条操作日志（通过journal可以重新构造出写入的数据）</span>
+
+<span class="token assign-left variable">storageEngine</span><span class="token operator">=</span>wiredTiger  <span class="token comment">#存储引擎有mmapv1、wiretiger、mongorocks</span>
+
+bind_ip <span class="token operator">=</span> <span class="token number">0.0</span>.0.0  <span class="token comment">#允许外部访问，如设置为127.0.0.1则只能在本机访问</span>
+</code></pre></div><h3 id="运行命令"><a class="header-anchor" href="#运行命令" aria-hidden="true">#</a> 运行命令</h3><div class="language-bash"><pre><code>mongod --config /usr/local/mongodb/mongodb.conf
+</code></pre></div></div></div></div></div></div></main><div class="l-card l-card--gutter l-elevation-xs primary-color" style="height:128px;"><div class="l-row l-row--justify-content-center l-row--align-item-center" style="margin-left:-undefined;margin-right:-undefined;height:100%;"><div class="l-col l-col--shrink" style=""><span class="theme--dark">Lagabu&#39;s Blog</span></div></div></div><!--]--></div></div></div>
+    <script>__VP_HASH_MAP__ = JSON.parse("{\"README.md\":\"bf5083ac\",\"index.md\":\"427ca066\",\"resume.md\":\"f2eb0fdf\",\"devops_index.md\":\"222ee29e\",\"leetcode_index.md\":\"daa2534e\",\"leetcode_offer.md\":\"681e380f\",\"leetcode_solutions.md\":\"83a20d56\",\"leetcode_interview_index.md\":\"fb5947aa\",\"leetcode_interview_reactive.md\":\"e9ef5793\",\"leetcode_interview_sort.md\":\"45ab1c05\",\"leetcode_interview_utils.md\":\"13c6e9a4\"}")</script>
+    <script type="module" async src="/_assets/app.01e9d3ce.js"></script>
+  </body>
+</html>
