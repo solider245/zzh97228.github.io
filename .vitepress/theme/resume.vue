@@ -157,30 +157,29 @@
                   >https://github.com/zzh97228/Lagabu</a>
                 </card-subtitle>
                 <card-content>
-                  <p>
-                    目的：使用vue3.0来编写如卡片、flex布局、输入框、下拉框等基础组件。结合了MaterialDesign的设计理念，
-                    以及ant-design的组件功能和样式。完全使用<b class="primary-color--text">typescript</b>而非tsx/jsx语法来编写组件，功能相对丰富但又有足够的
-                    自定义空间。所以此组件库中的组件更多的是提供一个容器，使用者可通过插槽自定义其中的内容。
-                  </p>
-                  <p>
-                    特性：
-                    <ol>
-                      <li>使用flex布局的栅格化系统，并可使用依赖注入为子级元素添加内边距。</li>
-                      <li>可自定义主题颜色而无需在webpack配置中定义颜色变量值。</li>
-                      <li>使用Boostrap工具类的形式为组件提供颜色的变换。</li>
-                      <li>基于vue3.0依赖注入方式写作的表单鉴权组件，装配更加灵活。</li>
-                      <li>将<b>tooltip</b>等组件转换为指令的形式，同时从原文档流中脱离，并挂载在根元素下。</li>
-                    </ol>
-                  </p>
-                  <p>
-                    现阶段成果：
-                    <ol>
-                      <li>发布了几个pre-alpha版本，写了基础的文档，正在完善每个组件的单元测试。</li>
-                      <li>已配合vitepress使用在自己的博客中，并用组件库编写了此简历。正在个人项目中逐步取代其他组件库。</li>
-                      <li>使用vue3.0的功能写作了一个简单的富文本编辑器。</li>
-                      <li>正在编写高级组件如markdown编辑器、头像裁剪器等。</li>
-                    </ol>
-                  </p>
+                  目的：使用vue3.0来编写如卡片、flex布局、输入框、下拉框等基础组件。结合了MaterialDesign的设计理念，
+                  以及ant-design的组件功能和样式。完全使用
+                  <b
+                    class="primary-color--text"
+                  >typescript</b>而非tsx/jsx语法来编写组件，功能相对丰富但又有足够的
+                  自定义空间。所以此组件库中的组件更多的是提供一个容器，使用者可通过插槽自定义其中的内容。
+                  特性：
+                  <ol>
+                    <li>使用flex布局的栅格化系统，并可使用依赖注入为子级元素添加内边距。</li>
+                    <li>可自定义主题颜色而无需在webpack配置中定义颜色变量值。</li>
+                    <li>使用Boostrap工具类的形式为组件提供颜色的变换。</li>
+                    <li>基于vue3.0依赖注入方式写作的表单鉴权组件，装配更加灵活。</li>
+                    <li>
+                      将
+                      <b>tooltip</b>等组件转换为指令的形式，同时从原文档流中脱离，并挂载在根元素下。
+                    </li>
+                  </ol>现阶段成果：
+                  <ol>
+                    <li>发布了几个pre-alpha版本，写了基础的文档，正在完善每个组件的单元测试。</li>
+                    <li>已配合vitepress使用在自己的博客中，并用组件库编写了此简历。正在个人项目中逐步取代其他组件库。</li>
+                    <li>使用vue3.0的功能写作了一个简单的富文本编辑器。</li>
+                    <li>正在编写高级组件如markdown编辑器、头像裁剪器等。</li>
+                  </ol>
                   <img :src="buttons" style="width: 100%;" />
                   <img :src="grids" style="width: 100%;" />
                 </card-content>
@@ -201,7 +200,8 @@
                         target="blank"
                         href="https://github.com/zzh97228/zzh97228.github.io"
                       >
-                        <icon brand left>github</icon>项目地址
+                        <icon brand left>github</icon>
+                        <span style="font-size: 12px;">项目地址</span>
                       </btn>
                     </row-item>
                     <row-item shrink>
@@ -212,7 +212,8 @@
                         target="blank"
                         href="https://lagabu-blog.netlify.app/"
                       >
-                        <icon brand left>readme</icon>项目预览
+                        <icon brand left>readme</icon>
+                        <span style="font-size: 1rem;">项目预览</span>
                       </btn>
                     </row-item>
                   </row>
@@ -304,15 +305,16 @@
 </template>
 
 <script>
-import head from './assets/head.jpg';
-import flightline from './assets/flightline.png'
-import snqmx from './assets/snqmx.png'
-import spyon2 from './assets/spy-on-2.png'
-import lagabuLogo from './assets/lagabu-logo.png';
-import buttons from './assets/buttons.png';
-import grids from './assets/grids.png';
+import head from './static/head.jpg';
+import flightline from './static/flightline.png';
+import snqmx from './static/snqmx.png';
+import spyon2 from './static/spy-on-2.png';
+import lagabuLogo from './static/lagabu-logo.png';
+import buttons from './static/buttons.png';
+import grids from './static/grids.png';
 
 export default {
+  name: 'Resume',
   data() {
     return {
       head,
@@ -322,34 +324,38 @@ export default {
       buttons,
       grids,
       lagabuLogo,
-      skills:[
+      skills: [
         {
           title: 'Typescript',
           level: '精通',
-          content: '熟练掌握ts的类型和高级类型的用法，可根据不同参数写出复杂的重载函数；熟练使用泛型写出工具类；熟练搭建ts版本的测试环境，并能为自己的库编写声明文件。'
+          content:
+            '熟练掌握ts的类型和高级类型的用法，可根据不同参数写出复杂的重载函数；熟练使用泛型写出工具类；熟练搭建ts版本的测试环境，并能为自己的库编写声明文件。',
         },
         {
           title: 'Vue.js',
           level: '精通',
-          content: '熟练掌握vue.js的生命周期和生命周期钩子的时机；熟练使用vue构建应用而不依赖于vue-cli；掌握vue.js的数据双向绑定原理，并积极参与社区的开发；可自行开发组件和指令；'
+          content:
+            '熟练掌握vue.js的生命周期和生命周期钩子的时机；熟练使用vue构建应用而不依赖于vue-cli；掌握vue.js的数据双向绑定原理，并积极参与社区的开发；可自行开发组件和指令；',
         },
         {
           title: 'Javascript',
           level: '熟练',
-          content: '熟悉原生javascript，常使用原生dom的api编写应用；了解诸如柯里化、面向对象的设计模式；'
+          content:
+            '熟悉原生javascript，常使用原生dom的api编写应用；了解诸如柯里化、面向对象的设计模式；',
         },
         {
           title: 'Node.js',
           level: '熟练',
-          content: '熟悉使用express进行后端开发，并运用插件进行ORM操作；熟练使用node.js编写简单脚本进行自动化构建、打包、测试；'
+          content:
+            '熟悉使用express进行后端开发，并运用插件进行ORM操作；熟练使用node.js编写简单脚本进行自动化构建、打包、测试；',
         },
         {
           title: 'Webpack',
           level: '熟练',
-          content: '熟练使用webpack打包和调试应用，熟悉webpack的参数'
-        }
-      ]
-    }
-  }
-}
+          content: '熟练使用webpack打包和调试应用，熟悉webpack的参数',
+        },
+      ],
+    };
+  },
+};
 </script>

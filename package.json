@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/zzh97228/zzh97228.github.io#readme",
   "devDependencies": {
-    "ali-oss": "^6.9.1",
     "cross-env": "^7.0.2",
     "lagabu": "^0.0.1-alpha.22",
     "less": "^3.11.1",

@@ -1,12 +1,11 @@
 <template>
-  <app id="app">
+  <app>
     <nav-bar v-show="!atResume" elevation="xs" height="48px" style="padding-right: 16px;">
       <nav-bar-title>
         <btn :href="$site.base + 'index.html'" depressed>Lagabu's Blog</btn>
       </nav-bar-title>
       <white-spacer></white-spacer>
       <btn nav link color="primary" :href="$site.base + 'resume.html'">Resume</btn>
-
       <btn nav link color="primary" :href="$site.base + 'leetcode/index.html'">Leetcode</btn>
       <btn round nav link target="blank" href="https://github.com/zzh97228">
         <icon brand style="font-size: 16px;">github</icon>
