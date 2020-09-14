@@ -95,7 +95,6 @@ function upperFirst(str) {
 - 如何实现 typescript 中的 readonly 语法
 - 用 css 实现列表内除最后一个元素外其余元素加上下划线
 
-... 后面记不得了
 
 面试官是一位开源作者，最近被业务困扰几乎没有接触新的技术，同组也有从 element 跳槽过来的，隐约间能感觉有点丧气。可能国内大厂的开源技术只是为了 KPI 吧，后来问了我点为什么要做开源项目，为什么之前实习的老板支持你做这件事……说实话我毕竟还是学生确实有精力去探索，也没为什么只是感觉好玩而已。
 
@@ -168,36 +167,46 @@ function jump2(n) {
 ## 阿里二面
 
 1、下列事件哪个不是由鼠标触发的事件（D）
+```
 A、click
 B、contextmenu
 C、mouseout
 D、keydown
+```
 
 2、下面关于 CSS 布局的描述，不正确的是？ （D）
+```
 A、块级元素实际占用的宽度与它的 width 属性有关；
 B、块级元素实际占用的宽度与它的 border 属性有关；
 C、块级元素实际占用的宽度与它的 padding 属性有关；
 D、块级元素实际占用的宽度与它的 background 属性有关。
+```
 
 3、下面有关 html 的描述，不推荐的是？(B)
+```
 A、在页面顶部添加 doctype 声明；
 B、在 </head> … <body> 中间插入 HTML 代码；
 C、避免使用 <font> 标签；
 D、使用 <table> 元素展现学生成绩表等数据。
+```
 
 4、浏览器在一次 HTTP 请求中，需要传输一个 4097 字节的文本数据给服务端，可以采用的方式? (E)
+```
 A、存入 IndexdDB
 B、写入 COOKIE
 C、放在 URL 参数
 D、写入 Session
 E、使用 POST
 F、放在 Local Storage
+```
 
 5、下面哪个属性不会让 div 脱离文档流（normal flow）？(C)
+```
 A、position: absolute;
 B、position: fixed;
 C、position: relative;
 D、float: left;
+```
 
 6、请编程计算 n 的阶乘
 // 代码写在这，编程语言不限，请用递归实现
@@ -260,7 +269,7 @@ new Promise(function (resolve) {
 // 代码写在这里 ↓↓↓↓↓
 // html 部分
 
-```
+```html
 <div class="container">
   <div class="left"></div>
   <div class="middle"></div>

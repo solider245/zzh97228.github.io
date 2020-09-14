@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "personal blog",
   "scripts": {
-    "dev": "npx vitepress",
-    "build": "node ./build.js",
-    "deploy": "cross-env node ./deploy.js"
+    "clean": "rimraf ./dist ./.vitepress/dist",
+    "dev": "cross-env npx vitepress",
+    "build": "cross-env npx vitepress build && cp ./.nojekyll ./.vitepress/dist"
   },
   "repository": {
     "type": "git",
@@ -20,14 +20,14 @@
   "devDependencies": {
     "ali-oss": "^6.9.1",
     "cross-env": "^7.0.2",
-    "lagabu": "^0.0.1-alpha.14",
+    "lagabu": "^0.0.1-alpha.22",
     "less": "^3.11.1",
     "less-loader": "^6.1.0",
     "prettier": "^2.0.5",
     "prismjs": "^1.20.0",
+    "rimraf": "^3.0.2",
     "shelljs": "^0.8.4",
-    "vitepress": "^0.4.1",
-    "vue": "^3.0.0-beta.18",
-    "vue-router": "^4.0.0-beta.1"
+    "vitepress": "^0.5.0",
+    "vue": "^3.0.0-rc.10"
   }
 }

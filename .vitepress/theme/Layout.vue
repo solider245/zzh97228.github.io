@@ -2,12 +2,12 @@
   <app id="app">
     <nav-bar v-show="!atResume" elevation="xs" height="48px" style="padding-right: 16px;">
       <nav-bar-title>
-        <btn href="/index.html" depressed>Lagabu's Blog</btn>
+        <btn :href="$site.base + 'index.html'" depressed>Lagabu's Blog</btn>
       </nav-bar-title>
       <white-spacer></white-spacer>
-      <btn nav link color="primary" href="/resume.html">Resume</btn>
+      <btn nav link color="primary" :href="$site.base + 'resume.html'">Resume</btn>
 
-      <btn nav link color="primary" href="/leetcode/index.html">Leetcode</btn>
+      <btn nav link color="primary" :href="$site.base + 'leetcode/index.html'">Leetcode</btn>
       <btn round nav link target="blank" href="https://github.com/zzh97228">
         <icon brand style="font-size: 16px;">github</icon>
       </btn>
@@ -32,29 +32,28 @@
 </template>
 
 <script>
-import { useRoute } from 'vitepress'
+import { useRoute } from 'vitepress';
 export default {
   name: 'layout',
   setup() {
     const route = useRoute();
     return {
-      route
-    }
+      route,
+    };
   },
   computed: {
     atResume() {
-      return this.route.path.indexOf('resume') !== -1
+      return this.route.path.indexOf('resume') !== -1;
     },
     atHome() {
-      return this.route.path === '/' || this.route.path === '/index.html'
+      return this.route.path === '/' || this.route.path === '/index.html';
     },
     contentStyle() {
       return {
-        'padding': this.atResume || this.atHome ? '4px' : '8px 26px'
-      }
-    }
-  }
-
+        padding: this.atResume || this.atHome ? '4px' : '8px 26px',
+      };
+    },
+  },
 };
 </script>
 

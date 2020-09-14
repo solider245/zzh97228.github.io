@@ -26,13 +26,13 @@ export default {
         {
           title: 'Leetcode',
           subtitle: '个人Leetcode题解集',
-          href: '/leetcode/index.html',
+          href: this.$site.base + 'leetcode/index.html',
           btnName: 'leetcode-solution'
         },
         {
           title: 'README',
           subtitle: '没什么就是个readme',
-          href: '/README.html',
+          href: this.$site.base + 'README.html',
           btnName: 'readme'
         }
       ]
