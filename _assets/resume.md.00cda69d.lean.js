@@ -1,0 +1,1 @@
+import{e as t,B as e,D as r,A as a}from"./common-3faa3bdf.js";const n='{"title":"","frontmatter":{},"lastUpdated":1600133693647.6287}';var o={};o.render=function(n,o,s,l,d,f){const m=t("resume");return a(),e("div",null,[r("p",null,[r(m)])])};export default o;export{n as __pageData};
