@@ -1,3 +1,10 @@
+
+## 目录
+
+- #### [一些面试常考的手撕代码](/interview/utils)
+- #### [vue的响应式原理](/interview/reactive)
+- #### [一些排序算法](/interview/sort)
+
 这是专门用于进行面经整理的文件，基本都是失败的面经，屡战屡败、屡败屡战
 
 ## 京东一面二面 HR 面
@@ -211,6 +218,7 @@ D、float: left;
 ```
 
 6、请编程计算 n 的阶乘
+
 ```js
 // 代码写在这，编程语言不限，请用递归实现
 function resolve(n) {
@@ -221,6 +229,7 @@ return resolve(n - 1) \* n
 ```
 
 7、请封装一个异步函数，入参为图片地址，在图片加载成功之后返回 true,失败返回 false.
+
 ```js
 // 代码写在这
 function helper(src) {
@@ -299,82 +308,84 @@ right: 100px; }
 10、请实现 find 函数，使下列的代码调用正确。
 
 约定：
-• title数据类型为String
-• userId为主键，数据类型为Number
+• title 数据类型为 String
+• userId 为主键，数据类型为 Number
 
 ```js
-
 var data = [
- {userId: 8, title: 'title1'},
- {userId: 11, title: 'other'},
- {userId: 15, title: null},
- {userId: 19, title: 'title2'}
+  { userId: 8, title: 'title1' },
+  { userId: 11, title: 'other' },
+  { userId: 15, title: null },
+  { userId: 19, title: 'title2' },
 ];
 
 //查找data中，符合条件的数据，并进行排序
-var result = find(data).where({
- "title": /\d$/
-}).orderBy('userId', 'desc');
+var result = find(data)
+  .where({
+    title: /\d$/,
+  })
+  .orderBy('userId', 'desc');
 
 console.log(result);
 // [{ userId: 19, title: 'title2'}, { userId: 8, title: 'title1' }];
 
-var find = function(origin) {
- //将find方法实现的代码谢在这里
- const result = [];
- const obj = {
- 	where: (record) => {
-   	if (typeof record !== 'object') return;
+var find = function (origin) {
+  //将find方法实现的代码谢在这里
+  const result = [];
+  const obj = {
+    where: (record) => {
+      if (typeof record !== 'object') return;
 
-       for (let i = 0;i < origin.length;i++) {
-           const o = origin[i];
-           let flag = true;
-         	for (let key in record) {
-             if (key === 'userId') {
-               if (typeof o[key] !== 'number' || o[key] !== record[key]) {
-                 flag = false;
-                 break;
-               }
-             } else if (key === 'title') {
-               if (Object.prototype.toString.call(record[key]) === '[object RegExp]') {
-                 const reg = new RegExp(record[key].source)
-                 if (!reg.test(o[key])) {
-                   flag = false;
-                   break;
-                 }
-               } else {
-                 if (o[key] !== record[key]) {
-                   flag = false;
-                   break;
-                 }
-               }
-             } else {
-               flag = false;
-               break;
-             }
-           }
-           if (flag) {
-             result.push(o);
-           }
-       }
+      for (let i = 0; i < origin.length; i++) {
+        const o = origin[i];
+        let flag = true;
+        for (let key in record) {
+          if (key === 'userId') {
+            if (typeof o[key] !== 'number' || o[key] !== record[key]) {
+              flag = false;
+              break;
+            }
+          } else if (key === 'title') {
+            if (
+              Object.prototype.toString.call(record[key]) === '[object RegExp]'
+            ) {
+              const reg = new RegExp(record[key].source);
+              if (!reg.test(o[key])) {
+                flag = false;
+                break;
+              }
+            } else {
+              if (o[key] !== record[key]) {
+                flag = false;
+                break;
+              }
+            }
+          } else {
+            flag = false;
+            break;
+          }
+        }
+        if (flag) {
+          result.push(o);
+        }
+      }
 
-
-   	return obj;
- 	},
-   orderBy: (keyname, order) => {
-    result.sort((a, b) => {
-         if (order === 'desc') {
-           return b[keyname] - a[keyname]
-         } else {
-           return a[keyname] - b[keyname]
-         }
-       })
-       return obj
- 	}
- }
- obj.valueOf = () => result;
- return obj;
-}
+      return obj;
+    },
+    orderBy: (keyname, order) => {
+      result.sort((a, b) => {
+        if (order === 'desc') {
+          return b[keyname] - a[keyname];
+        } else {
+          return a[keyname] - b[keyname];
+        }
+      });
+      return obj;
+    },
+  };
+  obj.valueOf = () => result;
+  return obj;
+};
 ```
 
 11、四个人（A、B、C、D）晚上过桥，并且只有一个手电筒，每次只能过两个人，
